@@ -1,0 +1,17 @@
+name: Build Docker
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Docker image
+    uses: strongmind/public-reusable-workflows/.github/workflows/docker-build.yml@main
+    secrets: inherit
+
+  deploy:
+    name: Deploy Rails to ECS
+    uses: strongmind/public-reusable-workflows/.github/workflows/rails-deploy.yml@main
+    secrets: inherit
+    with:
+      environment-name: stage
