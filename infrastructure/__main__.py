@@ -1,3 +1,5 @@
+import pulumi
 from strongmind_deployment.rails import RailsComponent
 
-component = RailsComponent("frozen-desserts", container_port=80)
+stack_name = pulumi.get_stack()
+component = RailsComponent(stack_name, container_port=80)
