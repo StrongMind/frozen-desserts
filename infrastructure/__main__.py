@@ -5,5 +5,5 @@ from strongmind_deployment.rails import RailsComponent
 stack_name = pulumi.get_stack()
 container_image = os.environ['CONTAINER_IMAGE']
 component = RailsComponent(stack_name,
-                           container_port=80,
+                           container_port=3000,
                            container_image=container_image)
