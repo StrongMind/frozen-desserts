@@ -1,4 +1,4 @@
-name: Build Docker
+name: Deploy with Docker
 
 on:
   workflow_dispatch:
@@ -15,4 +15,5 @@ jobs:
     uses: strongmind/public-reusable-workflows/.github/workflows/rails-deploy.yml@main
     with:
       environment-name: stage
+      container-image: ${{ needs.build.outputs.container-image }}
     secrets: inherit
