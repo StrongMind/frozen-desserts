@@ -3,6 +3,7 @@ import pulumi
 from strongmind_deployment.rails import RailsComponent
 
 master_key = os.environ['RAILS_MASTER_KEY']
+environment_name = os.environ['ENVIRONMENT_NAME']
 
 stack_name = pulumi.get_stack()
 container_image = os.environ['CONTAINER_IMAGE']
@@ -11,4 +12,5 @@ component = RailsComponent(stack_name,
                            container_image=container_image,
                            env_vars={
                                'RAILS_MASTER_KEY': master_key,
+                               'ENVIRONMENT_NAME': environment_name
                            })
