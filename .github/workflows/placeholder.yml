@@ -12,8 +12,7 @@ jobs:
   deploy:
     name: Deploy Rails to ECS
     needs: build
-    uses: strongmind/public-reusable-workflows/.github/workflows/rails-deploy.yml@main
+    uses: strongmind/public-reusable-workflows/.github/workflows/rails-deploy.yml@BEL-945
     with:
-      environment-name: stage
-      container-image: ${{ needs.build.outputs.container-image }}
+      environment-name: prod
     secrets: inherit
