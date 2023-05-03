@@ -12,7 +12,7 @@ jobs:
   deploy:
     name: Deploy Rails to ECS
     needs: build
-    uses: strongmind/public-reusable-workflows/.github/workflows/rails-deploy.yml@BEL-945
+    uses: strongmind/public-reusable-workflows/.github/workflows/rails-deploy.yml@main
     with:
       environment-name: prod
     secrets: inherit
