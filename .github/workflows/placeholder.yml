@@ -1,4 +1,4 @@
-name: Deploy with Docker
+name: Send release notification
 
 on:
   workflow_dispatch:
