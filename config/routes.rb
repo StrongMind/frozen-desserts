@@ -5,4 +5,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "desserts#index"
+
+  get "/up", to: proc { [200, {}, ["ok"]] },
+      as: :rails_health_check
+
 end
