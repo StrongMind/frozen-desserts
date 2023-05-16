@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  notify:
-    name: Notify Slack
-    uses: strongmind/public-reusable-workflows/.github/workflows/notify-slack.yml@main
+  build:
+    name: Build Docker image
+    uses: strongmind/public-reusable-workflows/.github/workflows/docker-build.yml@main
     secrets: inherit
