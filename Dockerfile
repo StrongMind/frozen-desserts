@@ -5,11 +5,11 @@ RUN apt-get update \
   && npm install -g yarn \
   && apt-get clean \
   && useradd --create-home ruby \
+  && mkdir -p /var/app \
   && chown ruby:ruby -R /var/app
 
 USER ruby
 
-RUN mkdir -p /var/app
 COPY --chown=ruby:ruby . /var/app
 WORKDIR /var/app
 
