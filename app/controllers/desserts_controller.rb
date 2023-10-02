@@ -4,6 +4,8 @@ class DessertsController < ApplicationController
   # GET /desserts or /desserts.json
   def index
     @desserts = Dessert.all
+    # Kick off a sidekiq job to log the current time
+    LogTimeJob.perform_later
   end
 
   # GET /desserts/1 or /desserts/1.json
